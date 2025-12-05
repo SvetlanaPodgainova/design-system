@@ -1,0 +1,7 @@
+.dots {
+  color: var(--color-gray-700);
+}
+
+[data-theme="dark"] .dots {
+  color: var(--color-white);
+}

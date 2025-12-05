@@ -1,0 +1,9 @@
+.layout {
+  display: flex;
+  gap: var(--layout-page-padding-x);
+  margin: 0 auto;
+  padding-inline: var(--space-24);
+  padding-block-start: var(--space-48);
+  min-block-size: 100vh;
+  max-inline-size: calc(var(--layout-max-width) + 2 * var(--space-24));
+}

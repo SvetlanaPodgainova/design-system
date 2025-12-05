@@ -1,0 +1,23 @@
+.avatar {
+  background-color: var(--avatar-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+
+  inline-size: 50px;
+  block-size: 50px;
+}
+
+.name {
+  font-size: var(--font-size-l);
+  color: var(--color-gray-700);
+}
+
+.image {
+  display: block;
+  object-fit: cover;
+  block-size: 100%;
+  inline-size: 100%;
+}

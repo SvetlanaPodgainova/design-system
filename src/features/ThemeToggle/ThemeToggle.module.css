@@ -1,0 +1,33 @@
+.toggle {
+  display: inline-flex;
+  margin-inline-start: auto;
+  margin-inline-end: clamp(10px, 15vw, 150px);
+}
+
+.track {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-l);
+  padding-inline: 4px;
+  box-shadow: var(--shadow-inset);
+  background-color: var(--toggle-bg-color);
+  block-size: 30px;
+  inline-size: 50px;
+  will-change: background-color;
+}
+
+.thumb {
+  position: absolute;
+  border-radius: 50%;
+  background-color: var(--color-yellow-700);
+  transition: 0.3s;
+  transform: translateX(0);
+  block-size: 20px;
+  inline-size: 20px;
+  will-change: transform;
+}
+
+[data-theme="dark"] .thumb {
+  transform: translateX(22px);
+}
