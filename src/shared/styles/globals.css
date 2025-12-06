@@ -31,7 +31,13 @@ a {
 }
 
 body {
-  min-height: 100vh;
+  color: var(--text);
+  font-family: var(--font-family-main);
+  font-weight: var(--fw-regular);
+  font-size: var(--font-size-base);
+  background-color: var(--bg);
+  background-color: var(--bg);
+  min-block-size: 100vh;
 }
 
 ul,

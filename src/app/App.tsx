@@ -1,15 +1,13 @@
-import { useTheme } from "../shared/context/theme";
 import { Layout } from "../shared/ui/Layout/Layout";
 import { Header } from "../widgets/Header/Header";
 import styles from "./App.module.css";
 
-function App() {
-  const { theme } = useTheme();
+function App() {  
   return (
-    <div className={styles.app} data-theme={theme}>
+    <div className={styles.app}>
       <Header />
       <Layout>
-        <div className="d"></div>
+        <div> Hello</div>
       </Layout>
     </div>
   );
