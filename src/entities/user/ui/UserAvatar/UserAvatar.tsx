@@ -1,8 +1,8 @@
 import styles from "./UserAvatar.module.css";
 
 type TUserAvatarProps = {
-  displayName: string;
-  avatarSrc?: string;
+  displayName: string | null;
+  avatarSrc: string | null;
 };
 
 export const UserAvatar = ({ displayName, avatarSrc }: TUserAvatarProps) => {

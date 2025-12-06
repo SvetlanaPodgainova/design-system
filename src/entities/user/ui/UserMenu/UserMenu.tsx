@@ -3,8 +3,8 @@ import { UserAvatar } from "../UserAvatar/UserAvatar";
 import styles from "./UserMenu.module.css";
 
 type TUserMenuProps = {
-  displayName: string;
-  avatarSrc?: string;
+  displayName: string | null;
+  avatarSrc: string | null;
 };
 
 export const UserMenu = ({ displayName, avatarSrc }: TUserMenuProps) => {
