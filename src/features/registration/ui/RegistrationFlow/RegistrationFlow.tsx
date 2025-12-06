@@ -1,17 +1,16 @@
 import { useState } from "react";
 import type { TRegistrationStep } from "../../model/type";
-import { PhoneStep } from "../PhoneStep";
-import { CodeStep } from "../CodeStep";
-import styles from './RegistrationFlow.module.css'
+import { PhoneStepForm } from "../PhoneStepForm/PhoneStepForm";
+import { CodeStepForm } from "../CodeStepForm/CodeStepForm";
+import styles from "./RegistrationFlow.module.css";
 
 export const RegistrationFlow = () => {
   const [step, setStep] = useState<TRegistrationStep>("phone");
 
   return (
-    <div>
-      <h1 className={styles.title}>Регистрация</h1>
-      {step === "phone" && <PhoneStep />}
-      {step === "code" && <CodeStep />}
+    <div className={styles.wrapper}>
+      {step === "phone" && <PhoneStepForm />}
+      {step === "code" && <CodeStepForm />}
     </div>
   );
 };

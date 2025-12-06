@@ -1,5 +1,5 @@
 .layout {
-  display: flex;
+  /* display: flex; */
   gap: var(--layout-page-padding-x);
   margin: 0 auto;
   padding-inline: var(--space-24);

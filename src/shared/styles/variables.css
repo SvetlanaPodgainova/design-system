@@ -38,6 +38,7 @@
   --fw-bold: 700;
 
   --font-size-base: var(--font-size-s);
+  --font-size-xs: 10px;
   --font-size-s: 14px;
   --font-size-m: 18px;
   --font-size-l: 20px;
@@ -71,8 +72,9 @@
   --shadow-inset: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 
   /* === Transition === */
-  --bg-transition: background-color 0.5s ease;
-  --color-transition: color 0.5s ease;
+  --transition-duration: 0.5s;
+  --bg-transition: background-color var(--transition-duration) ease;
+  --color-transition: color var(--transition-duration) ease;
 
   /* === Layout === */
   --layout-max-width: 1160px;
@@ -87,6 +89,13 @@
   --toggle-bg-color: var(--color-gray-200);
   --avatar-color: var(--color-gray-700);
   --avatar-bg-color: var(--color-gray-200);
+
+  /* === Input === */
+  --input-bd: 1px solid var(--input--bd-color);
+  --input--bd-color: var(--brand-color);
+  --input-bd-radius: var(--radius-s);
+  --input-placeholder-color: var(--color-gray-500);
+  --input--accent-label-color: var(--brand-color)
 }
 
 [data-theme="dark"] {
@@ -96,4 +105,6 @@
   --toggle-bg-color: var(--color-gray-600);
   --avatar-color: var(--color-white);
   --avatar-bg-color: var(--color-green-100);
+  --input--bd-color: var(--color-yellow-600);
+  --input--accent-label-color: var(--color-yellow-600)
 }

@@ -1,20 +1,35 @@
 import { ChevronDown } from "../icons/ChevronDown";
+import { ClearIcon } from "../icons/ClearIcon";
 import { MoreDots } from "../icons/MoreDots/MoreDots";
 
 type TIconButtonProps = {
   onClick?: () => void;
   ariaLabel: string;
-  variant: "chevron" | "dots";
+  variant: "chevron" | "dots" | "clear";
+  className?: string;
 };
 
 export const IconButton = ({
   ariaLabel,
   variant,
+  className,
   ...rest
 }: TIconButtonProps) => {
-  const Icon = variant === "chevron" ? ChevronDown : MoreDots;
+  const iconsLibrary = {
+    chevron: ChevronDown,
+    dots: MoreDots,
+    clear: ClearIcon,
+  };
+
+  const Icon = iconsLibrary[variant];
+
   return (
-    <button type="button" aria-label={ariaLabel} {...rest}>
+    <button
+      className={className}
+      type="button"
+      aria-label={ariaLabel}
+      {...rest}
+    >
       <Icon />
     </button>
   );

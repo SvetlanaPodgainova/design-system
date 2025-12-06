@@ -1,4 +1,4 @@
-export const CodeStep = () => {
+export const CodeStepForm = () => {
   return (
     <div>CodeStep</div>
   )
