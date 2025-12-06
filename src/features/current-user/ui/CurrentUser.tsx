@@ -1,16 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 // import { api } from "../../shared/api/api";
-import { UserMenu } from "../../entities/user/ui/UserMenu/UserMenu";
+import { UserMenu } from "../../../entities/user/ui/UserMenu/UserMenu";
 import axios from "axios";
-
-export type TReqCurrentUserDTO = {
-  id: string;
-  username: string;
-  phone: string;
-  display_name: string | null;
-  avatar_url: string | null;
-  created_at: string;
-};
+import type { TReqCurrentUserDTO } from "../model/type";
 
 export const CurrentUser = () => {
   const { data, isLoading, isError } = useQuery<TReqCurrentUserDTO>({
@@ -22,7 +14,7 @@ export const CurrentUser = () => {
         {
           withCredentials: true,
         }
-      );      
+      );
       return response.data;
     },
   });
@@ -35,5 +27,7 @@ export const CurrentUser = () => {
     return <div>Не удалось загрузить пользователя</div>;
   }
 
-  return <UserMenu displayName={data.display_name} avatarSrc={data.avatar_url}/>;
+  return (
+    <UserMenu displayName={data.display_name} avatarSrc={data.avatar_url} />
+  );
 };
