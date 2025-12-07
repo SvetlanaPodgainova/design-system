@@ -9,6 +9,10 @@ export const useForm = <T extends Record<string, string | boolean>>(
 
   const handleChange = (name: string, value: string) => {
     setFormState((prev) => ({ ...prev, [name]: value }));
+    setErrors((prev) => ({
+      ...prev,
+      [name]: undefined,
+    }));
   };
 
   const handleClearInput = (name: string) => {
@@ -22,8 +26,17 @@ export const useForm = <T extends Record<string, string | boolean>>(
     }));
   };
 
+  const setFieldError = (name: string, error?: string) => {
+    setErrors((prev) => ({
+      ...prev,
+      [name]: error,
+    }));
+  };
+
   const handleResetForm = () => {
     setFormState(initialState);
+    setTouched({});
+    setErrors({});
   };
 
   return {
@@ -32,6 +45,7 @@ export const useForm = <T extends Record<string, string | boolean>>(
     handleClearInput,
     handleBlur,
     handleResetForm,
-    errors
+    setFieldError,
+    errors,
   };
 };

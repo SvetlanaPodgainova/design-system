@@ -24,3 +24,13 @@ export function validatePhone(value: string): string | null {
 
   return null;
 }
+
+export function normalizePhoneForBackend(value: string): string {
+  const digits = value.replace(/\D/g, "");
+
+  if (digits.length === 11 && digits.startsWith("8")) {
+    return "7" + digits.slice(1);
+  }
+
+  return digits;
+}
