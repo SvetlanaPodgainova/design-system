@@ -1,4 +1,7 @@
-type NativeInputProps = React.InputHTMLAttributes<HTMLInputElement>;
+type NativeInputProps = Omit<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  "onChange" | "onBlur" | "value" | "name" | "type"
+>;
 
 type TFloatInputProps = {
   name: string;

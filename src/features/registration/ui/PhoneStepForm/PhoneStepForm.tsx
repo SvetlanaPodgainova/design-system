@@ -33,7 +33,7 @@ export const PhoneStepForm = () => {
         onChange={handleChange}
         onClear={handleClearInput}
         onBlur={handleFieldBlur}
-        error={errors.phone}
+        error={errors.phone}        
       />
     </form>
   );
