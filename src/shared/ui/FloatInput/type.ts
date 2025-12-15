@@ -1,4 +1,6 @@
-export type TFloatInputProps = {  
+type NativeInputProps = React.InputHTMLAttributes<HTMLInputElement>;
+
+type TFloatInputProps = {
   name: string;
   type: string;
   label: string;
@@ -7,4 +9,6 @@ export type TFloatInputProps = {
   onChange: (name: string, value: string) => void;
   onBlur?: (name: string) => void;
   error?: string;
-}
+};
+
+export type TFloatInputAllProps = TFloatInputProps & NativeInputProps;
